@@ -8,6 +8,7 @@ const cors= require('cors');
 const helmet = require('helmet');
 
 const indexRouter = require('./routes/index');
+const projectsRouter = require('./routes/projects');
 
 const app = express();
 
@@ -20,5 +21,6 @@ app.use(cors());
 app.use(helmet());
 
 app.use('/', indexRouter);
+app.use('/projects', projectsRouter);
 
 module.exports = app;
