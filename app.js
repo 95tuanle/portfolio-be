@@ -7,8 +7,8 @@ const logger = require('morgan');
 const cors= require('cors');
 const helmet = require('helmet');
 
-const indexRouter = require('./routes/index');
-const projectsRouter = require('./routes/projects');
+const indexRouter = require('./routes/index-router');
+const githubRouter = require('./routes/github-router');
 
 const app = express();
 
@@ -21,6 +21,6 @@ app.use(cors());
 app.use(helmet());
 
 app.use('/', indexRouter);
-app.use('/projects', projectsRouter);
+app.use('/github', githubRouter);
 
 module.exports = app;
