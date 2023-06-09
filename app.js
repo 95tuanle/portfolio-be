@@ -9,6 +9,7 @@ const helmet = require('helmet');
 
 const indexRouter = require('./routes/index-router');
 const githubRouter = require('./routes/github-router');
+const linkedinRouter = require('./routes/linkedin-router');
 
 const app = express();
 
@@ -22,5 +23,6 @@ app.use(helmet());
 
 app.use('/', indexRouter);
 app.use('/github', githubRouter);
+app.use('/linkedin', linkedinRouter);
 
 module.exports = app;
