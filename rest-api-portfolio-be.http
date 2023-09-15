@@ -1,0 +1,13 @@
+GET http://localhost:3000
+
+<> 2023-08-25T023029.200.html
+
+###
+GET http://localhost:3000/github/user
+
+<> 2023-08-25T023029.200.json
+
+###
+GET http://localhost:3000/github/user/repos
+
+<> 2023-08-25T023030.200.json
