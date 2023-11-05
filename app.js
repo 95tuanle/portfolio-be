@@ -1,26 +1,26 @@
-'use strict';
-require('dotenv').config();
-const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
-const cors= require('cors');
-const helmet = require('helmet');
+"use strict";
+require("dotenv").config();
+const express = require("express");
+const path = require("path");
+const cookieParser = require("cookie-parser");
+const logger = require("morgan");
+const cors = require("cors");
+const helmet = require("helmet");
 
-const indexRouter = require('./routes/index-router');
-const githubRouter = require('./routes/github-router');
+const indexRouter = require("./routes/index-router");
+const githubRouter = require("./routes/github-router");
 
 const app = express();
 
-app.use(logger('dev'));
+app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 app.use(helmet());
 
-app.use('/', indexRouter);
-app.use('/github', githubRouter);
+app.use("/", indexRouter);
+app.use("/github", githubRouter);
 
 module.exports = app;
