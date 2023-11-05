@@ -4,7 +4,7 @@ import { Octokit } from '@octokit/core';
 @Injectable()
 export class AppService {
   octokit = new Octokit({
-    auth: process.env.GITHUB_TOKEN,
+    auth: process.env['GITHUB_TOKEN'],
   });
 
   getIndex(): string {
